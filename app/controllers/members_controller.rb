@@ -19,6 +19,19 @@ class MembersController < ApplicationController
     end
   end
   
+  def edit
+    @member = Member.find(params[:id])
+  end
+  
+  def update
+    @member = Member.find(params[:id])
+    if @member.update_attributes(member_params)
+      # Handle a successful update.
+    else
+      render 'edit'
+    end
+  end
+  
   private
 
     def member_params
