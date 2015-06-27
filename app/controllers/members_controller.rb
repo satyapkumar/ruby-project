@@ -10,6 +10,7 @@ class MembersController < ApplicationController
   def create
     @member = Member.new(member_params)
     if @member.save
+      log_in @member
       # Handle a successful save.
       flash[:success] = "Welcome to Online Dating!"
       redirect_to @member
