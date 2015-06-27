@@ -14,14 +14,20 @@
           <%= f.password_field :password, placeholder: "password", class: 'form-control'%>
         </div>
         
+        
+
+        <button type="submit" class="float">Login</button>
+        <br/>
+        <br/>
         <!--remember me checkbox-->
-        <%= f.label :remember_me, class: "checkbox inline" do %>
+        <p><%= f.label :remember_me, class: "checkbox inline" do %>
           <%= f.check_box :remember_me %>
           <span>Remember me on this computer</span>
         <% end %>
-
-        <button type="submit" class="float">Login</button>
+        </p>
     <% end %>
+
+        
        <p>New member? <%= link_to "Sign up now!", signup_path %></p>
   </div>
  </div>
