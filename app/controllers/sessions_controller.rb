@@ -5,9 +5,16 @@ class SessionsController < ApplicationController
   def create
     member = Member.find_by(email: params[:session][:email].downcase)
     if member && member.authenticate(params[:session][:password])
-      log_in member
-      params[:session][:remember_me] == '1' ? remember(member) : forget(member)
-      redirect_back_or member
+      if member.activated?
+        log_in member
+        params[:session][:remember_me] == '1' ? remember(member) : forget(member)
+        redirect_back_or member
+      else
+        message = "Account not activated"
+        message += "Check your email for the activation link"
+        flash[:warning] = message
+        redirect_to root_url
+      end
     else
       flash.now[:danger] = 'Invalid email/password combination' # Something is wrong
       render 'new'

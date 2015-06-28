@@ -1,0 +1,9 @@
+<h1>Online Dating Website</h1>
+
+<p>Hi <%= @member.username %></p>
+
+<p>
+  Welcom to the Online Dating Website! Click on the link below to activate your account:
+</p>
+
+<%= link_to "Activate", edit_account_activation_url(@member.activation_token, email: @member.email) %>

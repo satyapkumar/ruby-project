@@ -4,35 +4,42 @@ amos:
   email: amos@example.com
   password_digest: <%= Member.digest('password') %>
   admin: true
-  
-archer:
-  username: Sterling Archer
-  email: duchess@example.gov
-  password_digest: <%= Member.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 michael:
   username: Michael Example
   email: michael@example.com
   password_digest: <%= Member.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 archer:
   username: Sterling Archer
   email: duchess@example.gov
   password_digest: <%= Member.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 lana:
   username: Lana Kane
   email: hands@example.gov
   password_digest: <%= Member.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 mallory:
   username: Mallory Archer
   email: boss@example.gov
   password_digest: <%= Member.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 <% 30.times do |n| %>
 member_<%= n %>:
   username:  <%= "Member #{n}" %>
   email: <%= "member-#{n}@example.com" %>
   password_digest: <%= Member.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 <% end %>

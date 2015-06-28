@@ -18,10 +18,10 @@ class MembersController < ApplicationController
   def create
     @member = Member.new(member_params)
     if @member.save
-      log_in @member
+      @member.send_activation_email
       # Handle a successful save.
-      flash[:success] = "Welcome to Online Dating!"
-      redirect_to @member
+      flash[:info] = "Please check your email to activate your account."
+      redirect_to root_url
     else
       render 'new'
     end
