@@ -27,7 +27,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
+gem 'will_paginate', '3.0.7'
+gem 'bootstrap-will_paginate', '0.0.10'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -43,6 +44,7 @@ group :development, :test do
   gem 'sqlite3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'faker', '1.4.2'
 end
 
 group :test do
@@ -50,6 +52,7 @@ group :test do
   gem 'sqlite3'
   gem 'mini_backtrace', '0.1.3'
   gem 'guard-minitest', '2.3.1'
+  gem 'faker', '1.4.2'
 end
 
 group :production do

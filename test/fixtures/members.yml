@@ -3,3 +3,36 @@ amos:
   username: Amos
   email: amos@example.com
   password_digest: <%= Member.digest('password') %>
+  admin: true
+  
+archer:
+  username: Sterling Archer
+  email: duchess@example.gov
+  password_digest: <%= Member.digest('password') %>
+
+michael:
+  username: Michael Example
+  email: michael@example.com
+  password_digest: <%= Member.digest('password') %>
+
+archer:
+  username: Sterling Archer
+  email: duchess@example.gov
+  password_digest: <%= Member.digest('password') %>
+
+lana:
+  username: Lana Kane
+  email: hands@example.gov
+  password_digest: <%= Member.digest('password') %>
+
+mallory:
+  username: Mallory Archer
+  email: boss@example.gov
+  password_digest: <%= Member.digest('password') %>
+
+<% 30.times do |n| %>
+member_<%= n %>:
+  username:  <%= "Member #{n}" %>
+  email: <%= "member-#{n}@example.com" %>
+  password_digest: <%= Member.digest('password') %>
+<% end %>

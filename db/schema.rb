@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150627002820) do
+ActiveRecord::Schema.define(version: 20150628020116) do
 
   create_table "members", force: :cascade do |t|
     t.string   "username"
@@ -22,10 +22,11 @@ ActiveRecord::Schema.define(version: 20150627002820) do
     t.integer  "ago"
     t.text     "about_me"
     t.string   "status"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "password_digest"
     t.string   "remember_digest"
+    t.boolean  "admin",           default: false
   end
 
   add_index "members", ["email"], name: "index_members_on_email", unique: true

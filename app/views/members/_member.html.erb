@@ -1,0 +1,7 @@
+<li>
+    <%= image_tag "members/team-member.gif", width: '50', height: '50' %>
+    <%= link_to member.username, member %>
+    <% if current_member.admin? && !current_member?(member) %>
+      <%= link_to "delete", member, method: :delete, data: { confirm: "You sure?" } %>
+    <% end %>
+</li>

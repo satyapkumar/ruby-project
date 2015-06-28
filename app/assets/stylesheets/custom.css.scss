@@ -322,6 +322,18 @@ body, input, button {
   transform: translateY(-3px);
 }
 
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
+
 /* Large Devices, Wide Screens */
 
 @media only screen and (max-width : 1500px) {
