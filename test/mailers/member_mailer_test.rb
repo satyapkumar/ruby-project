@@ -14,11 +14,14 @@ class MemberMailerTest < ActionMailer::TestCase
   end
 
   test "password_reset" do
-    mail = MemberMailer.password_reset
+    member = members(:amos)
+    member.reset_token = Member.new_token
+    mail = MemberMailer.password_reset(member)
     assert_equal "Password reset", mail.subject
-    assert_equal ["to@example.org"], mail.to
+    assert_equal [member.email], mail.to
     assert_equal ["noreply@saltylake.com"], mail.from
-    assert_match "Hi", mail.body.encoded
+    assert_match member.reset_token,        mail.body.encoded
+    assert_match CGI::escape(member.email), mail.body.encoded
   end
 
 end

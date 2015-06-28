@@ -15,9 +15,8 @@ class MemberMailer < ApplicationMailer
   #
   #   en.member_mailer.password_reset.subject
   #
-  def password_reset
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+  def password_reset(member)
+    @member = member
+    mail to: member.email, subject: "Password reset"
   end
 end
