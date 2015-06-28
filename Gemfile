@@ -31,7 +31,7 @@ gem 'will_paginate', '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+gem 'faker', '1.4.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -44,7 +44,7 @@ group :development, :test do
   gem 'sqlite3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem 'faker', '1.4.2'
+  
 end
 
 group :test do
@@ -52,7 +52,6 @@ group :test do
   gem 'sqlite3'
   gem 'mini_backtrace', '0.1.3'
   gem 'guard-minitest', '2.3.1'
-  gem 'faker', '1.4.2'
 end
 
 group :production do
