@@ -57,4 +57,12 @@ class MemberTest < ActiveSupport::TestCase
   test "authenticated? should return false for a user with nil digest" do
     assert_not @member.authenticated?(:remember, '')
   end
+  
+  test "associated timelines should be destroy" do
+    @member.save
+    @member.timelines.create!(content: "Lorem ipsum")
+    assert_difference 'Timeline.count', -1 do
+      @member.destroy
+    end
+  end
 end

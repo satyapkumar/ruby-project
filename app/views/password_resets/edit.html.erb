@@ -4,7 +4,7 @@
 <div class="login">
   <div class="heading">
     <%= form_for(@member, url: password_reset_path(params[:id])) do |f| %>
-      <%= render 'shared/error_messages' %>
+      <%= render 'shared/error_messages', object: f.object %>
 
       <%= hidden_field_tag :email, @member.email %>
       

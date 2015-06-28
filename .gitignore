@@ -50,6 +50,9 @@ build/
 # .ruby-version
 # .ruby-gemset
 
+# Ignore upload test images
+/public/uploads
+
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
 >>>>>>> ed8e5f43d54719695b4daeefc554bd7b93462d44

@@ -8,4 +8,14 @@
       </h1>
     </section>
   </aside>
+  <!--display timeline post-->
+  <div class="col-md-8">
+    <% if @member.timelines.any? %>
+      <h3>Timelines (<%= @member.timelines.count %>)</h3>
+      <ol class="timelines">
+        <%= render @timelines %>
+      </ol>
+      <%= will_paginate @timelines %>
+    <% end %>
+  </div>
 </div>

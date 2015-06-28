@@ -1,0 +1,4 @@
+<%= image_tag "members/team-member.gif", width: '50', height: '50' %>
+<h1><%= current_member.username %></h1>
+<span><%= link_to "view my profile", current_member %></span>
+<span><%= pluralize(current_member.timelines.count, "Timeline") %></span>

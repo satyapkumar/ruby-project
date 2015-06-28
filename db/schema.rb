@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150628070612) do
+ActiveRecord::Schema.define(version: 20150628214743) do
 
   create_table "members", force: :cascade do |t|
     t.string   "username"
@@ -35,5 +35,16 @@ ActiveRecord::Schema.define(version: 20150628070612) do
   end
 
   add_index "members", ["email"], name: "index_members_on_email", unique: true
+
+  create_table "timelines", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "member_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "picture"
+  end
+
+  add_index "timelines", ["member_id", "created_at"], name: "index_timelines_on_member_id_and_created_at"
+  add_index "timelines", ["member_id"], name: "index_timelines_on_member_id"
 
 end

@@ -13,7 +13,7 @@ Member.create!(username:  "amos",
              activated: true,
              activated_at: Time.zone.now)
 
-99.times do |n|
+30.times do |n|
   username  = Faker::Name.name
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
@@ -23,4 +23,10 @@ Member.create!(username:  "amos",
                password_confirmation: password,
                activated: true,
                activated_at: Time.zone.now)
+end
+
+members = Member.order(:created_at).take(6)
+20.times do
+    content = Faker::Lorem.sentence(5)
+    members.each { |member| member.timelines.create!(content: content) }
 end

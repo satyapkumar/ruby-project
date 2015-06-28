@@ -13,6 +13,7 @@ class MembersController < ApplicationController
   
   def show
     @member = Member.find(params[:id])
+    @timelines = @member.timelines.paginate(page: params[:page])
   end
   
   def create
