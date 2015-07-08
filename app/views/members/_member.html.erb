@@ -1,7 +1,15 @@
 <li>
+  <div class="col-sm-2">
     <%= image_tag "members/team-member.gif", width: '50', height: '50' %>
+  </div>
+  <div class="col-sm-8">
     <%= link_to member.username, member %>
+    <p><%= member.age %> <%= member.gender %></p>
+    <p>About Me: <%= member.about_me %></p>
+  </div>
+  <div class="col-sm-2">
     <% if current_member.admin? && !current_member?(member) %>
       <%= link_to "delete", member, method: :delete, data: { confirm: "You sure?" } %>
     <% end %>
+  </div>
 </li>

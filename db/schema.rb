@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20150628214743) do
     t.string   "last_name"
     t.string   "first_name"
     t.string   "gender"
-    t.integer  "ago"
+    t.integer  "age"
     t.text     "about_me"
     t.string   "status"
     t.datetime "created_at",                        null: false

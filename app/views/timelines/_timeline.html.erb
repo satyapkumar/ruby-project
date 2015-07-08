@@ -1,16 +1,23 @@
 <li id="timeline-<%= timeline.id %>">
+    <p>
     <%= image_tag "members/team-member.gif", width: '50', height: '50' %>
-    <span class="user">
+    
+      <span class="user">
         <%= link_to timeline.member.username, timeline.member %>
-    </span>
-    <span class="content">
+      </span>
+    </p>
+    <p>
+      <span class="content">
         <%= timeline.content %>
         <%= image_tag timeline.picture.url if timeline.picture? %>
-    </span>
-    <span class="timestamp">
+      </span>
+    </p>
+    <p>
+      <span class="timestamp">
         Posted <%= time_ago_in_words(timeline.created_at) %> ago.
         <% if current_member?(timeline.member) %>
           <%= link_to "delete", timeline, method: :delete, data: { confirm: "You sure?" } %>
         <% end %>
-    </span>
+      </span>
+    </p>
 </li>

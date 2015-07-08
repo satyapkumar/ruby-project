@@ -3,10 +3,15 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= image_tag "members/team-member.gif", width: '50', height: '50' %>
-        <%= @member.username %>
+        <%= image_tag "members/team-member.gif", width: '50', height: '50' %> <%= @member.username %>
       </h1>
     </section>
+    <hr>
+    <p>First Name: <%= @member.first_name %></p>
+    <p>Last Name: <%= @member.last_name %></p>
+    <p>Gender: <%= @member.gender %></p>
+    <p>Age: <%= @member.age%></p>
+    <p>About Me: <%= @member.about_me %></p>
   </aside>
   <!--display timeline post-->
   <div class="col-md-8">
